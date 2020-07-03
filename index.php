@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-06-22 01:22:49
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-03 22:39:07
+ * @LastEditTime: 2020-07-03 22:42:48
  * @FilePath: \git-webhook\index.php
  * @Description: 
  */
@@ -40,8 +40,6 @@ if ($requestSource==='github') {
     // 来自GitHub的请求
     list($algo, $hash) = explode('=', $secretInHeader, 2);
     $payloadHash = hash_hmac($algo, $requestBody, SECRET_KEY);
-    echo $payloadHash.'   ';
-    echo $hash;
     if ($hash !== $payloadHash) {
         echo '发生错误 - 签名无效';
         return http_response_code(404);
