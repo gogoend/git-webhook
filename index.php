@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-06-22 01:22:49
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-03 22:31:22
+ * @LastEditTime: 2020-07-03 22:39:07
  * @FilePath: \git-webhook\index.php
  * @Description: 
  */
@@ -53,7 +53,7 @@ if ($requestSource==='github') {
         return http_response_code(404);
     }
 }
-echo '鉴权成功';
-var_dump(
-    json_decode($requestBody)
-);
+echo '鉴权成功，可以部署';
+// var_dump(
+//     json_decode($requestBody)
+// );
