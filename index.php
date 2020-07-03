@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-06-22 01:22:49
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-03 22:42:48
+ * @LastEditTime: 2020-07-03 23:57:23
  * @FilePath: \git-webhook\index.php
  * @Description: 
  */
@@ -51,7 +51,8 @@ if ($requestSource==='github') {
         return http_response_code(404);
     }
 }
-echo '鉴权成功，可以部署';
-// var_dump(
-//     json_decode($requestBody)
-// );
+echo "鉴权成功，可以部署\n";
+
+$repoName = json_decode($requestBody)->repository->name;
+
+echo (exec(PROJECT_BASE_FOLDER.$repoName.'/runbuild.sh'));
