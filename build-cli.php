@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-07-04 00:05:17
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-04 01:38:48
+ * @LastEditTime: 2020-07-04 01:41:38
  * @FilePath: \git-webhook\build-cli.php
  * @Description: 
  */
@@ -32,4 +32,4 @@ if (!file_exists($runBuildFilePath . '/runbuild.sh')) {
     exit(1);
 }
 
-echo (exec("cd $runBuildFilePath && ./runbuild.sh 2>&1"));
+echo (exec("cd $runBuildFilePath && ./runbuild.sh"));
