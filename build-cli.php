@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-07-04 00:05:17
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-04 00:38:13
+ * @LastEditTime: 2020-07-04 00:48:18
  * @FilePath: \git-webhook\build-cli.php
  * @Description: 
  */
@@ -22,8 +22,12 @@ if (file_exists('auth-config.php')) {
     exit(1);
 }
 
-$runBuildFilePath = PROJECT_BASE_FOLDER . $repoName . '/runbuild.sh';
-if (!file_exists($runBuildFilePath)) {
+$runBuildFilePath = PROJECT_BASE_FOLDER . $repoName;
+if(!is_dir($runBuildFilePath)){
+    echo "发生错误 - 找不到 $repoName 仓库\n";
+    exit(1);
+}
+if (!file_exists($runBuildFilePath . '/runbuild.sh')) {
     echo "发生错误 - 找不到 $repoName 仓库根目录下的runbuild.sh\n";
     exit(1);
 }

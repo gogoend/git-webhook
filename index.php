@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-06-22 01:22:49
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-04 00:37:36
+ * @LastEditTime: 2020-07-04 00:46:08
  * @FilePath: \git-webhook\index.php
  * @Description: 
  */
@@ -55,4 +55,6 @@ echo "鉴权成功，可以部署\n";
 
 $repoName = json_decode($requestBody)->repository->name;
 
-echo (exec("php build-cli.php $repoName"));
+echo "仓库名称：$repoName\n";
+
+echo (exec("php build-cli.php $repoName 2>&1"));
