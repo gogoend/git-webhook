@@ -3,7 +3,7 @@
  * @Author: gogoend
  * @Date: 2020-07-04 00:05:17
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-04 01:17:49
+ * @LastEditTime: 2020-07-04 01:26:22
  * @FilePath: \git-webhook\build-cli.php
  * @Description: 
  */
@@ -32,4 +32,4 @@ if (!file_exists($runBuildFilePath . '/runbuild.sh')) {
     exit(1);
 }
 
-echo (exec('sudo ' .$runBuildFilePath. ' 2>&1'));
+echo (exec($runBuildFilePath. ' 2>&1'));
