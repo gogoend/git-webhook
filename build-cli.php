@@ -3,13 +3,13 @@
  * @Author: gogoend
  * @Date: 2020-07-04 00:05:17
  * @LastEditors: gogoend
- * @LastEditTime: 2020-07-04 00:32:08
+ * @LastEditTime: 2020-07-04 00:33:11
  * @FilePath: \git-webhook\build-cli.php
  * @Description: 
  */
 
 // var_dump($argv);
-if (array_key_exists(1, $repoName)) {
+if (array_key_exists(1, $argv)) {
     $repoName = $argv[1];
 } else {
     echo '发生错误 - 参数中未指定仓库名称';
